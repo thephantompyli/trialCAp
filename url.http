@@ -1,0 +1,73 @@
+###Get Entity
+GET http://localhost:4004/odata/v4/processor/Incidents('3b23bb4b-4ac7-4a24-ac02-aa10cabd842c') HTTP/1.1
+Authorization: Basic alice:""
+
+###Get EnttySet
+GET http://localhost:4004/odata/v4/processor/Incidents HTTP/1.1
+Authorization: Basic alice:""
+
+###Create 
+POST  http://localhost:4004/odata/v4/processor/Incidents HTTP/1.1
+Content-Type: application/json
+Authorization: Basic alice:""
+
+{
+ 
+  "ID": "3b23bb4b-4ac7-4a24-ac02-aa10cabd8422",
+  "createdAt": "2025-10-28T12:02:38.473Z",
+  "createdBy": "anonymous",
+  "modifiedAt": "2025-10-28T12:02:38.473Z",
+  "modifiedBy": "anonymous",
+  "customer_ID": "1004151",
+  "title": "Fridge not working bro",
+  "urgency_code": "H",
+  "status_code": "C"
+ 
+}
+
+###Delete
+DELETE  http://localhost:4004/odata/v4/processor/Incidents('3583f982-d7df-4aad-ab26-301d4a157cd7') HTTP/1.1
+Authorization: Basic alice:""
+
+
+
+###Update   
+PUT   http://localhost:4004/odata/v4/processor/Incidents HTTP/1.1
+Content-Type: application/json
+Authorization: Basic alice:""
+
+{
+ 
+  "ID": "3b23bb4b-4ac7-4a24-ac02-aa10cabd8422",
+  "createdAt": "2025-10-28T12:02:38.473Z",
+  "createdBy": "anonymous",
+  "modifiedAt": "2025-10-28T12:02:38.473Z",
+  "modifiedBy": "anonymous",
+  "customer_ID": "1004151",
+  "title": "Fridge not working bro",
+  "urgency_code": "M",
+  "status_code": "A"
+ 
+}
+
+###Funtion with multiple items
+   
+GET    http://localhost:4004/odata/v4/processor/getIncidentStatuses HTTP/1.1
+Content-Type: application/json
+Authorization: Basic alice:""
+
+
+###Action 
+   
+POST    http://localhost:4004/odata/v4/processor/createIncident HTTP/1.1
+Content-Type: application/json
+Authorization: Basic alice:""
+
+{
+  "customer_ID": "123456",
+  "title": "A new item broke so badly"
+}
+###Close Incident
+POST    http://localhost:4004/odata/v4/processor/Incidents('3b23bb4b-4ac7-4a24-ac02-aa10cabd842c')/ProcessorService.closeIncident
+Content-Type: application/json
+Authorization: Basic alice:""
