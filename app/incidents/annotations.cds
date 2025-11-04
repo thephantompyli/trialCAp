@@ -1,4 +1,4 @@
-using ProcessorService as service from '../../srv/service';
+using ProcessorService as service from '../../srv/processor-service';
 annotate service.Incidents with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
