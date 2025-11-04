@@ -40,6 +40,13 @@ postCode      : String;
 streetAddress : String;
 }
 
+entity Escalation : cuid, managed {
+    customer      : String;
+    Manager       : String;
+    Level         : String;
+}
+
+
 entity Status : CodeList {
 key code: String enum {
     new = 'N';

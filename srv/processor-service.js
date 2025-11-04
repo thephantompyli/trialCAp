@@ -13,7 +13,9 @@ class ProcessorService extends cds.ApplicationService {
       } else {
         results = await SELECT.from("Incidents")
       }
-      console.log('a')
+      
+       const api = await cds.connect.to ('sap.capire.incidents.api.EscalateService')
+       api.emit ('Escalation.Changed', { results}) 
       return results;
     })
     this.after("READ", "Incidents", async function (res) {
